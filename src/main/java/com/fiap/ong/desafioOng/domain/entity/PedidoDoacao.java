@@ -7,6 +7,7 @@ public class PedidoDoacao {
     private Long id;
     private LocalDateTime dataPedido;
     private List<ItemPedido> itens;
+    private boolean entregue;
 
     public PedidoDoacao(LocalDateTime dataPedido, List<ItemPedido> itens) {
         this.dataPedido = dataPedido;
@@ -23,6 +24,9 @@ public class PedidoDoacao {
     public void setId(Long id) { this.id = id; }
     public void setDataPedido(LocalDateTime dataPedido) { this.dataPedido = dataPedido; }
     public void setItens(List<ItemPedido> itens) { this.itens = itens; }
+    public void marcarComoEntregue() {
+        this.entregue = true;
+    }
 
 
 

@@ -27,6 +27,7 @@ public class ItemPedido {
 
     public Long getId() { return id; }
     public String getProduto() { return produto; }
+    public String getNomeProduto() { return nomeProduto; }
     public BigDecimal getQuantidade() { return quantidade; }
     public UnidadeMedida getUnidade() { return unidade; }
 

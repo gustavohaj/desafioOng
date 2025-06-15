@@ -13,6 +13,7 @@ import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class PedidoRepositoryImpl implements PedidoRepository {
 
     private final PedidoJpaRepository pedidoJpaRepository;
@@ -52,6 +53,14 @@ public class PedidoRepositoryImpl implements PedidoRepository {
 
         List<PedidoDoacaoEntity> entities = entityManager.createQuery("from PedidoDoacaoEntity", PedidoDoacaoEntity.class).getResultList();
         return entities.stream().map(this::toDomain).collect(Collectors.toList());
+    }
+
+    @Override
+    public Long buscarPorId(Long idPedido) {
+        return pedidoJpaRepository.findById(idPedido)
+                .map(PedidoDoacaoEntity::getId)
+                .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado"));
+
     }
 
     private PedidoDoacao toDomain(PedidoDoacaoEntity entity) {

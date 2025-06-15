@@ -19,6 +19,7 @@ public class PedidoDoacaoEntity {
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemPedidoEntity> itens = new ArrayList<>();
 
+    private boolean entregue;
 
     public Long getId() {
         return id;
@@ -42,5 +43,13 @@ public class PedidoDoacaoEntity {
 
     public void setItens(List<ItemPedidoEntity> itens) {
         this.itens = itens;
+    }
+
+    public boolean isEntregue() {
+        return entregue;
+    }
+
+    public void setEntregue(boolean entregue) {
+        this.entregue = entregue;
     }
 }

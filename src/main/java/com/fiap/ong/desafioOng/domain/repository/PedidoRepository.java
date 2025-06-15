@@ -7,4 +7,6 @@ import java.util.List;
 public interface PedidoRepository {
     PedidoDoacao salvar(PedidoDoacao pedido);
     List<PedidoDoacao> listarTodos();
+
+    Long buscarPorId(Long idPedido);
 }
