@@ -13,8 +13,17 @@ public class PedidoDoacao {
         this.itens = itens;
     }
 
+    public PedidoDoacao() {
+        // Construtor padrão necessário para frameworks como JPA
+    }
+
     public Long getId() { return id; }
     public LocalDateTime getDataPedido() { return dataPedido; }
     public List<ItemPedido> getItens() { return itens; }
+    public void setId(Long id) { this.id = id; }
+    public void setDataPedido(LocalDateTime dataPedido) { this.dataPedido = dataPedido; }
+    public void setItens(List<ItemPedido> itens) { this.itens = itens; }
+
+
 
 }

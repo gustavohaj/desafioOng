@@ -18,7 +18,7 @@ public class ItemPedidoEntity {
     @Enumerated(EnumType.STRING)
     private UnidadeMedidaEntity unidade;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pedido_id")
     private PedidoDoacaoEntity pedido;
 

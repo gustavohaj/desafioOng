@@ -3,6 +3,7 @@ package com.fiap.ong.desafioOng.infrastructure.repository.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,7 @@ public class PedidoDoacaoEntity {
     private LocalDateTime dataPedido;
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ItemPedidoEntity> itens;
+    private List<ItemPedidoEntity> itens = new ArrayList<>();
 
 
     public Long getId() {

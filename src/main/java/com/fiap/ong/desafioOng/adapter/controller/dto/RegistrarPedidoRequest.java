@@ -12,5 +12,6 @@ public class RegistrarPedidoRequest {
         public String produto;
         public BigDecimal quantidade;
         public String unidade;
+        public String nomeProduto;
     }
 }
