@@ -1,6 +1,5 @@
 package com.fiap.ong.desafioOng.domain.entity;
 
-import java.awt.*;
 import java.math.BigDecimal;
 
 public class ItemPedido {
